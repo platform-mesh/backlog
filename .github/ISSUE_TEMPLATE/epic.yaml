@@ -1,0 +1,60 @@
+name: Epic
+description: For tracking a large feature, including how to demo it.
+title: "epic: "
+labels:
+  - epic
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is the goal of this epic?
+      placeholder: (ex.) a description of the necessary context for this epic.
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objectives
+      description: What are the objectives of this epic? The epic is considered done when all objectives are fulfilled.
+      placeholder: |
+        - [ ] (ex.) User should be able to ...
+        - ...
+    validations:
+      required: true
+  
+  - type: textarea
+    id: stories
+    attributes:
+      label: User Stories
+      description: What tasks do you foresee to be necessary to reach the given objectives?
+      placeholder: |
+        - [ ] (ex.) Add new API group
+        - [ ] (ex.) Add Widget API type
+        - [ ] (ex.) Add WidgetController
+        - [ ] (ex.) **stretch-goal:** Add Widgets to `kubectl kcp` plugin
+    validations:
+      required: true
+
+  - type: dropdown
+    id: demo
+    attributes:
+      label: Demo Required
+      description: Should the person working on this epic prepare a demo to be given after completion?
+      multiple: false
+      options:
+        - 'Yes'
+        - 'No'
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Demo Steps
+      description: What steps should a demo for this epic include?
+      placeholder: |
+        1. (ex.) Admin does X
+        1. (ex.) User does Y
+        1. (ex.) Everyone is happy :)
+    validations:
+      required: false
