@@ -2,100 +2,31 @@ name: Task
 description: Create a new development task
 title: "[Task]: "
 labels: ["task"]
-assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for creating a task! Please fill out the information below.
-        
   - type: textarea
     id: overview
     attributes:
       label: Overview
-      description: Provide a clear and concise description of the task
-      placeholder: Describe what needs to be done...
+      description: What needs to be done?
     validations:
       required: true
 
   - type: textarea
-    id: technical-requirements
+    id: implementation
     attributes:
-      label: Technical Requirements
-      description: List the specific technical requirements or acceptance criteria
+      label: Implementation Details
+      description: Technical implementation details including Go code and Kubernetes resources
       placeholder: |
-        - Requirement 1
-        - Requirement 2
+        - Code changes:
+        - Kubernetes resources:
     validations:
       required: true
 
-  - type: textarea
-    id: go-considerations
-    attributes:
-      label: Go-specific Considerations
-      description: Note any Go-specific implementation details, patterns, or practices to follow
-      placeholder: |
-        - Package structure
-        - Error handling approach
-        - Performance considerations
-
-  - type: textarea
-    id: kubernetes-components
-    attributes:
-      label: Kubernetes Components
-      description: List any Kubernetes resources that need to be modified or created
-      placeholder: |
-        - Deployments
-        - Services
-        - ConfigMaps
-        - Custom Resources
-
   - type: checkboxes
-    id: dependencies
+    id: checklist
     attributes:
-      label: Dependencies
-      description: Check all that apply
+      label: Completion Checklist
       options:
-        - label: Dependencies resolved
-        - label: Required APIs/services available
-
-  - type: checkboxes
-    id: testing
-    attributes:
-      label: Testing Requirements
-      description: Check all testing requirements that apply
-      options:
-        - label: Unit tests
-        - label: Integration tests
-        - label: E2E tests
-        - label: Kubernetes manifest validation
-
-  - type: checkboxes
-    id: documentation
-    attributes:
-      label: Documentation
-      description: Check all documentation that needs to be updated
-      options:
-        - label: Code documentation
-        - label: API documentation
-        - label: Deployment documentation
-
-  - type: checkboxes
-    id: definition-of-done
-    attributes:
-      label: Definition of Done
-      description: Checklist for task completion
-      options:
-        - label: Code follows Go best practices and project standards
-        - label: All tests passing
+        - label: Code implemented and tested
         - label: Documentation updated
-        - label: Code reviewed
-        - label: Changes tested in development environment
-        - label: Kubernetes manifests validated
-
-  - type: textarea
-    id: additional-notes
-    attributes:
-      label: Additional Notes
-      description: Any additional information, configuration, or context that would be helpful
-      placeholder: Add any other context about the task here
+        - label: Changes reviewed
