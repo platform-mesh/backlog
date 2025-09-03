@@ -2,7 +2,7 @@ name: Adr
 description: Create a new architecture decision record
 title: "[Adr]: "
 labels: ["adr"]
-type: "Adr"
+type: "ADR"
 body:
   - type: textarea
     id: overview
