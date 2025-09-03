@@ -1,0 +1,17 @@
+name: Adr
+description: Create a new architecture decision record
+title: "[Adr]: "
+labels: ["adr"]
+type: "Adr"
+body:
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What needs to be done?
+      placeholder: |
+        - Context:
+        - Decisions:
+    validations:
+      required: true
+
