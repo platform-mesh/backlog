@@ -20,7 +20,7 @@ body:
         - Code changes:
         - Kubernetes resources:
     validations:
-      required: true
+      required: false
 
   - type: checkboxes
     id: checklist
