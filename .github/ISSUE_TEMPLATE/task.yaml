@@ -1,6 +1,6 @@
 name: Task
 description: Create a new development task
-title: "[Task]: "
+title: "task: "
 labels: ["task"]
 body:
   - type: textarea
