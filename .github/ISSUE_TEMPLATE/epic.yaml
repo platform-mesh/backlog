@@ -22,21 +22,8 @@ body:
         - [ ] (ex.) User should be able to ...
         - ...
     validations:
-      required: true
+      required: false
   
-  - type: textarea
-    id: stories
-    attributes:
-      label: User Stories
-      description: What tasks do you foresee to be necessary to reach the given objectives?
-      placeholder: |
-        - [ ] (ex.) Add new API group
-        - [ ] (ex.) Add Widget API type
-        - [ ] (ex.) Add WidgetController
-        - [ ] (ex.) **stretch-goal:** Add Widgets to `kubectl kcp` plugin
-    validations:
-      required: true
-
   - type: dropdown
     id: demo
     attributes:
