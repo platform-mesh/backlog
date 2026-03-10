@@ -1,0 +1,15 @@
+name: Initiative
+description: Create a new high level Initiative
+title: "[Initiative]: "
+labels: ["initiative"]
+type: "INIT"
+body:
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What needs to be done?
+      placeholder: |
+        - Context:
+    validations:
+      required: true
