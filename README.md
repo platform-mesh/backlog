@@ -148,9 +148,23 @@ Public repositories in the Platform Mesh organization, grouped by purpose.
 | [.github](https://github.com/platform-mesh/.github) | Org-level community health files |
 
 
+## Security / Disclosure
+
+If you find any bug that may be a security problem, please follow our instructions at [in our security policy](https://github.com/platform-mesh/backlog/security/policy) on how to report it. Please do not create GitHub issues for security-related doubts or problems.
+
+## Contributing
+
+Please refer to the [CONTRIBUTING.md](https://github.com/platform-mesh/.github/blob/main/CONTRIBUTING.md) file in this repository for instructions on how to contribute to Platform Mesh.
+
+## Code of Conduct
+
+Please refer to our [Code of Conduct](https://github.com/platform-mesh/.github/blob/main/CODE_OF_CONDUCT.md) for information on the expected conduct for contributing to Platform Mesh.
+
 ## Links
 
 - **Website:** [platform-mesh.io](https://platform-mesh.io)
 - **GitHub Org:** [github.com/platform-mesh](https://github.com/platform-mesh)
 - **Community:** [github.com/platform-mesh/community](https://github.com/platform-mesh/community)
 - **Security Policy:** [SECURITY.md](https://github.com/platform-mesh/.github/blob/main/SECURITY.md)
+
+<p align="center"><img alt="Bundesministerium für Wirtschaft und Energie (BMWE)-EU funding logo" src="https://apeirora.eu/assets/img/BMWK-EU.png" width="400"/></p>
