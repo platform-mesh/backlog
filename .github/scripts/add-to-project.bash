@@ -23,7 +23,6 @@ get_project_id() {
 get_team_members() {
     {
         gh api --paginate "/orgs/platform-mesh/teams/kube/members" --jq '.[].login'
-        gh api --paginate "/orgs/kcp-dev/teams/kcp-contributors/members" --jq '.[].login'
     } | sort -u
 }
 
