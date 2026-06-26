@@ -1,0 +1,19 @@
+name: Add issues and PRs to project board
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # every 2 hours
+  workflow_dispatch: {}
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add team issues and PRs to board
+        env:
+          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
+          PROJECT_OWNER: platform-mesh
+          PROJECT_NUMBER: 1
+        run: bash .github/scripts/add-to-project.bash all
