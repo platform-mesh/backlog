@@ -11,9 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: "1415820"
+          private-key: ${{ secrets.PM_PUBLISHER_PRIVATE_KEY }}
+          owner: platform-mesh
+
       - name: Add team issues and PRs to board
         env:
-          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           PROJECT_OWNER: platform-mesh
           PROJECT_NUMBER: 1
         run: bash .github/scripts/add-to-project.bash all
