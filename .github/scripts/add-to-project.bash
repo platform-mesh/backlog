@@ -82,12 +82,6 @@ add_query_result_to_project() {
     done
 }
 
-build_user_filter() {
-    local qualifier="$1"  # author or assignee
-    local members="$2"
-    echo "$members" | awk -v q="$qualifier" 'NR==1{s=q":"$0} NR>1{s=s" OR "q":"$0} END{print "("s")"}'
-}
-
 do_queries() {
     local project_id
     project_id=$(get_project_id) || die "Failed to get project ID"
@@ -97,18 +91,15 @@ do_queries() {
     members=$(get_team_members) || die "Failed to get team members"
     log "Team members: $(echo "$members" | tr '\n' ' ')"
 
-    local author_filter assignee_filter
-    author_filter=$(build_user_filter "author" "$members")
-    assignee_filter=$(build_user_filter "assignee" "$members")
-
     for org in platform-mesh kcp-dev; do
         log "Querying org: $org"
+        for member in $members; do
+            add_query_result_to_project "$project_id" \
+                "org:${org} is:pr is:open author:${member}"
 
-        add_query_result_to_project "$project_id" \
-            "org:${org} is:pr state:open ${author_filter}"
-
-        add_query_result_to_project "$project_id" \
-            "org:${org} is:issue state:open ${assignee_filter}"
+            add_query_result_to_project "$project_id" \
+                "org:${org} is:issue is:open assignee:${member}"
+        done
     done
 }
 
