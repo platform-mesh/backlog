@@ -91,14 +91,18 @@ do_queries() {
     members=$(get_team_members) || die "Failed to get team members"
     log "Team members: $(echo "$members" | tr '\n' ' ')"
 
+    local since
+    since=$(date -u -d '3 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+    log "Filtering items updated since: $since"
+
     for org in platform-mesh kcp-dev; do
         log "Querying org: $org"
         for member in $members; do
             add_query_result_to_project "$project_id" \
-                "org:${org} is:pr is:open author:${member}"
+                "org:${org} is:pr is:open author:${member} updated:>=${since}"
 
             add_query_result_to_project "$project_id" \
-                "org:${org} is:issue is:open assignee:${member}"
+                "org:${org} is:issue is:open assignee:${member} updated:>=${since}"
         done
     done
 }
