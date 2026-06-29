@@ -102,6 +102,9 @@ do_queries() {
                 "org:${org} is:pr is:open author:${member} updated:>=${since}"
 
             add_query_result_to_project "$project_id" \
+                "org:${org} is:issue is:open author:${member} updated:>=${since}"
+
+            add_query_result_to_project "$project_id" \
                 "org:${org} is:issue is:open assignee:${member} updated:>=${since}"
         done
     done
